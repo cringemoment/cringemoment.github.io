@@ -7,7 +7,7 @@ body {
 }
 
 .spacer {
-  height: 150%
+    height: 150%;
 }
 
 .content {
@@ -15,21 +15,21 @@ body {
 }
 
 .main_title {
-  color: #fff;
-  font-family: sans-serif;
-  font-size: 6vw;
-  opacity: 1;
-  transition: opacity 0.5s ease-in-out;
-  text-align: center;
-  position: fixed;
-  top: 20%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 999;
+    color: #fff;
+    font-family: sans-serif;
+    font-size: 6vw;
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+    text-align: center;
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
 }
 
 .fadeout {
-  opacity: 0; /* Set opacity to 0 to fade out the text */
+    opacity: 0; /* Set opacity to 0 to fade out the text */
 }
 
 .osu_container {
@@ -81,14 +81,14 @@ body {
 }
 
 .project_link {
-  color: #34d8eb;
-  font-family: sans-serif;
-  font-size: 1.8vw;
-  font-weight: bold;
-  position: relative;
-  z-index: 2;
-  width: 60%;
-  left: 1%;
+    color: #34d8eb;
+    font-family: sans-serif;
+    font-size: 1.8vw;
+    font-weight: bold;
+    position: relative;
+    z-index: 2;
+    width: 60%;
+    left: 1%;
 }
 
 .popinfromleft {
@@ -102,13 +102,13 @@ body {
 }
 
 .wordle_container {
-  position: relative;
-  animation-fill-mode: forwards;
-  opacity: 0;
-  z-index: 2;
-  animation-duration: 0.5s;
-  top: 0;
-  right: 0;
+    position: relative;
+    animation-fill-mode: forwards;
+    opacity: 0;
+    z-index: 2;
+    animation-duration: 0.5s;
+    top: 0;
+    right: 0;
 }
 
 .wordle_box {

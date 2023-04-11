@@ -1,6 +1,6 @@
 const projects = [[".osu_container", "popinfromleft"], [".wordle_container", "popinfromright"], [".grouplearn_container", "popinfromleft"], [".weather_container", "popinfromright"]];
 
-const scrolldelay = 300;
+const scrolldelay = 100;
 const buffer = 0; // Buffer in pixels
 let shouldRemoveAnimation = true; // Variable to determine whether to remove animation
 
@@ -16,9 +16,6 @@ projects.forEach(([selector, className]) => {
     if (isVisible) {
       element.classList.add(className);
       shouldRemoveAnimation = false; // Set shouldRemoveAnimation to false when animation is added
-    }
-    if (isTooHigh) { // Check if shouldRemoveAnimation is true
-      element.classList.remove(className);
     }
   });
 });
