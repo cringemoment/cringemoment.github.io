@@ -1,2 +1,1 @@
-# cringemoment.github.io
-Main website wowza
+dumb coder that really likes tetris

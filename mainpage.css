@@ -1,0 +1,221 @@
+body {
+    background: linear-gradient(to right bottom, #00f, #f00);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 100vh;
+    margin: 0;
+}
+
+.spacer {
+  height: 50%;
+}
+
+.content {
+    padding: 2%;
+}
+
+.main_title {
+  color: #fff;
+  font-family: sans-serif;
+  font-size: 6vw;
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+  text-align: center;
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+}
+
+.fadeout {
+  opacity: 0; /* Set opacity to 0 to fade out the text */
+}
+
+.osu_container {
+    position: relative;
+    animation-fill-mode: forwards;
+    opacity: 0;
+    z-index: 2;
+    text-align: left;
+    animation-duration: 0.5s;
+}
+
+.osu_box {
+    position: relative;
+    z-index: 2;
+    width: 50%;
+    height: 20%;
+    z-index: 2;
+}
+
+.project_title {
+    color: #333;
+    font-family: sans-serif;
+    font-size: 4vw;
+    font-weight: bold;
+    position: relative;
+    z-index: 2;
+    width: 60%;
+    margin-left: 1%;
+}
+
+.project_blurb {
+    color: #333;
+    font-family: sans-serif;
+    font-size: 2.4vw;
+    font-weight: bold;
+    position: relative;
+    z-index: 2;
+    width: 60%;
+    margin-left: 1%;
+}
+
+.project_video_background {
+    position: fixed;
+    z-index: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    object-fit: cover;
+}
+
+.project_link {
+  color: #34d8eb;
+  font-family: sans-serif;
+  font-size: 1.8vw;
+  font-weight: bold;
+  position: relative;
+  z-index: 2;
+  width: 60%;
+  left: 1%;
+}
+
+.popinfromleft {
+    animation-name: popinfromleft;
+    animation-fill-mode: forwards;
+}
+
+.popinfromright {
+    animation-name: popinfromright;
+    animation-fill-mode: forwards;
+}
+
+.wordle_container {
+  position: relative;
+  animation-fill-mode: forwards;
+  opacity: 0;
+  z-index: 2;
+  animation-duration: 0.5s;
+  top: 0;
+  right: 0;
+}
+
+.wordle_box {
+    position: relative;
+    z-index: 2;
+    width: 40%;
+    height: 30%;
+    float: right;
+    text-align: right;
+}
+
+.wordle_text {
+  font-family: consolas;
+  color: white;
+	display: inline-block;
+	background-color: rgb(0, 0, 0);
+	padding: 10px;
+	margin: 5px;
+	font-size: 40px;
+	font-weight: bold;
+  border: 10px black;
+  width: 50px;
+  text-align: center;
+  animation-duration: 0.5s;
+}
+
+.yellowrotate {
+  animation-name: yellowrotate;
+  animation-fill-mode: forwards;
+}
+
+.greenrotate {
+  animation-name: greenrotate;
+  animation-fill-mode: forwards;
+}
+
+.grouplearn_container {
+  position: relative;
+  animation-fill-mode: forwards;
+  opacity: 0;
+  z-index: 2;
+  text-align: left;
+  animation-duration: 0.5s;
+}
+
+.weather_container {
+  position: relative;
+  animation-fill-mode: forwards;
+  opacity: 0;
+  z-index: 2;
+  text-align: left;
+  animation-duration: 0.5s;
+}
+
+@keyframes fadeandslide {
+    0% {
+        opacity: 0;
+        transform: translateY(-5%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes popinfromleft {
+    0% {
+        opacity: 0;
+        transform: translateX(-5%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes popinfromright {
+    0% {
+        opacity: 0;
+        transform: translateX(5%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes yellowrotate {
+  0% {
+    background-color: black;
+    transform: rotateX(0deg);
+  }
+  100% {
+    color: black;
+    background-color: yellow;
+    transform: rotateX(360deg);
+  }
+}
+
+@keyframes greenrotate {
+  0% {
+    background-color: black;
+    transform: rotateX(0deg);
+  }
+  100% {
+    color: black;
+    background-color: green;
+    transform: rotateX(360deg);
+  }
+}
