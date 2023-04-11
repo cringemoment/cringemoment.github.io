@@ -1,6 +1,6 @@
 const projects = [[".osu_container", "popinfromleft"], [".wordle_container", "popinfromright"], [".grouplearn_container", "popinfromleft"], [".weather_container", "popinfromright"]];
 
-const scrolldelay = 100;
+const scrolldelay = 0;
 const buffer = 0; // Buffer in pixels
 let shouldRemoveAnimation = true; // Variable to determine whether to remove animation
 
