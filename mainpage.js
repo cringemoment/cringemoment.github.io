@@ -1,6 +1,6 @@
-const projects = [[".osu_container", "popinfromleft"], [".wordle_container", "popinfromright"], [".grouplearn_container", "popinfromleft"], [".weather_container", "popinfromright"]];
+const projects = [[".osu_container", "popinfromleft"], [".wordle_container", "popinfromleft"], [".grouplearn_container", "popinfromleft"], [".weather_container", "popinfromleft"], [".ezsfinder_title1", "ezsfinder_content1"]];
 
-const scrolldelay = 0;
+const scrolldelay = 300;
 const buffer = 0; // Buffer in pixels
 let shouldRemoveAnimation = true; // Variable to determine whether to remove animation
 
@@ -9,16 +9,23 @@ projects.forEach(([selector, className]) => {
 
   window.addEventListener('scroll', () => {
     const elementTop = element.getBoundingClientRect().top - buffer;
-    const elementBottom = element.getBoundingClientRect().bottom + scrolldelay + buffer;
+    const elementBottom = element.getBoundingClientRect().bottom + buffer;
     const isVisible = (elementTop >= 0) && (elementBottom <= window.innerHeight);
-    const isTooHigh = (elementBottom > window.scrollY + window.innerHeight);
+    const isTooHigh = (elementBottom + scrolldelay > window.scrollY + window.innerHeight);
 
     if (isVisible) {
       element.classList.add(className);
       shouldRemoveAnimation = false; // Set shouldRemoveAnimation to false when animation is added
     }
+    if (isTooHigh) { // Check if shouldRemoveAnimation is true
+      element.classList.remove(className);
+    }
   });
 });
+
+var outerCircle = document.getElementById('outerCircle');
+var innerCircle = document.getElementById('innerCircle');
+
 
 const wordleTextElements = document.querySelectorAll(".wordle_text");
 const rotationClasses = ["yellowrotate", "yellowrotate", "yellowrotate", "yellowrotate", "yellowrotate", "yellowrotate", "yellowrotate", "yellowrotate", "yellowrotate", "yellowrotate", "yellowrotate", "greenrotate"];
@@ -48,4 +55,76 @@ window.addEventListener('scroll', () => {
 
     mainTitle.style.opacity = opacity < 0 ? 0 : opacity;
   });
+});
+
+var ezsfinderContent1 = document.querySelector('.ezsfinder_content1');
+
+var text1 = `bruh\ns`
+var text2 = "bruh2"
+
+speed = 100;
+
+// Function to simulate typing effect
+function typeEffect1() {
+  var index = 0;
+  var intervalId = setInterval(function() {
+    ezsfinderContent1.textContent = text1.slice(0, index);
+    index ++ ;
+    if (index > text1.length) {
+      clearInterval(intervalId);
+    }
+  }, speed);
+}
+
+shouldrun1 = true
+
+window.addEventListener('scroll', () => {
+  const elementTop = ezsfinderContent1.getBoundingClientRect().top - buffer;
+  const elementBottom = ezsfinderContent1.getBoundingClientRect().bottom + scrolldelay + buffer;
+  const isVisible = (elementTop >= 0) && (elementBottom <= window.innerHeight);
+  const isTooHigh = (elementBottom > window.scrollY + window.innerHeight);
+
+  if (isVisible && shouldrun1) {
+    typeEffect1();
+    shouldrun1 = false
+  }
+  if(isTooHigh) {
+    shouldrun1 = true
+  }
+});
+
+var ezsfinderContent2 = document.querySelector('.ezsfinder_content2');
+
+var text1 = "Ezsfinder, a tool that makes tetris research easy"
+var text2 = "Still in a command line tho lol"
+
+speed = 100;
+
+// Function to simulate typing effect
+function typeEffect2() {
+  var index = 0;
+  var intervalId = setInterval(function() {
+    ezsfinderContent2.textContent = text2.slice(0, index);
+    index ++ ;
+    if (index > text2.length) {
+      clearInterval(intervalId);
+    }
+  }, speed);
+}
+
+shouldrun2 = true
+
+window.addEventListener('scroll', () => {
+  const elementTop = ezsfinderContent2.getBoundingClientRect().top - buffer;
+  const elementBottom = ezsfinderContent2.getBoundingClientRect().bottom+ buffer;
+  const isVisible = (elementTop >= 0) && (elementBottom + scrolldelay<= window.innerHeight);
+  const isTooHigh = (elementBottom > window.scrollY + window.innerHeight);
+
+  if (isVisible && shouldrun2) {
+    typeEffect2();
+    shouldrun2 = false
+  }
+  if(isTooHigh) {
+    shouldrun2 = true
+  }
 });

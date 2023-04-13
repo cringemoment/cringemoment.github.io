@@ -7,29 +7,25 @@ body {
 }
 
 .spacer {
-    height: 150%;
-}
-
-.content {
-    padding: 2%;
+  height: 80vh;
 }
 
 .main_title {
-    color: #fff;
-    font-family: sans-serif;
-    font-size: 6vw;
-    opacity: 1;
-    transition: opacity 0.5s ease-in-out;
-    text-align: center;
-    position: fixed;
-    top: 20%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 999;
+  color: #fff;
+  font-family: sans-serif;
+  font-size: 6vw;
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+  text-align: center;
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
 }
 
 .fadeout {
-    opacity: 0; /* Set opacity to 0 to fade out the text */
+  opacity: 0; /* Set opacity to 0 to fade out the text */
 }
 
 .osu_container {
@@ -44,9 +40,10 @@ body {
 .osu_box {
     position: relative;
     z-index: 2;
-    width: 50%;
     height: 20%;
+    width: 40%;
     z-index: 2;
+    background-color: #ff8000
 }
 
 .project_title {
@@ -56,7 +53,6 @@ body {
     font-weight: bold;
     position: relative;
     z-index: 2;
-    width: 60%;
     margin-left: 1%;
 }
 
@@ -67,7 +63,6 @@ body {
     font-weight: bold;
     position: relative;
     z-index: 2;
-    width: 60%;
     margin-left: 1%;
 }
 
@@ -81,14 +76,14 @@ body {
 }
 
 .project_link {
-    color: #34d8eb;
-    font-family: sans-serif;
-    font-size: 1.8vw;
-    font-weight: bold;
-    position: relative;
-    z-index: 2;
-    width: 60%;
-    left: 1%;
+  color: #34d8eb;
+  font-family: sans-serif;
+  font-size: 1.8vw;
+  font-weight: bold;
+  position: relative;
+  z-index: 2;
+  width: 60%;
+  left: 1%;
 }
 
 .popinfromleft {
@@ -102,13 +97,13 @@ body {
 }
 
 .wordle_container {
-    position: relative;
-    animation-fill-mode: forwards;
-    opacity: 0;
-    z-index: 2;
-    animation-duration: 0.5s;
-    top: 0;
-    right: 0;
+  position: relative;
+  animation-fill-mode: forwards;
+  opacity: 0;
+  z-index: 2;
+  animation-duration: 0.5s;
+  top: 0;
+  right: 0;
 }
 
 .wordle_box {
@@ -116,8 +111,6 @@ body {
     z-index: 2;
     width: 40%;
     height: 30%;
-    float: right;
-    text-align: right;
 }
 
 .wordle_text {
@@ -162,6 +155,45 @@ body {
   text-align: left;
   animation-duration: 0.5s;
 }
+
+.ezsfinder_container {
+  position: relative;
+  animation-fill-mode: forwards;
+  z-index: 2;
+  text-align: left;
+  width: 45%;
+  height: 16vh;
+  animation-duration: 0.5s;
+  overflow: hidden;
+}
+
+.ezsfinder_title1 {
+  white-space: nowrap;
+  font-family: monospace;
+  font-size: 2vh;
+  color: white;
+  animation: typing 1s steps(40) infinite;
+  margin:10px
+}
+
+.ezsfinder_title2 {
+  white-space: nowrap;
+  font-family: monospace;
+  font-size: 14px;
+  color: white;
+  animation: typing 1s steps(40) infinite;
+  margin:10px
+}
+
+@keyframes typing {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
 
 @keyframes fadeandslide {
     0% {
