@@ -23,28 +23,68 @@ projects.forEach(([selector, className]) => {
   });
 });
 
-var outerCircle = document.getElementById('outerCircle');
-var innerCircle = document.getElementById('innerCircle');
-
-
 const wordleTextElements = document.querySelectorAll(".wordle_text");
-const rotationClasses = ["yellowrotate", "yellowrotate", "yellowrotate", "yellowrotate", "yellowrotate", "yellowrotate", "yellowrotate", "yellowrotate", "yellowrotate", "yellowrotate", "yellowrotate", "greenrotate"];
 
-window.addEventListener("scroll", () => {
-  wordleTextElements.forEach((element) => {
+goal = "thisistest";
+
+if(Math.random() * 100 < 99) { //RNG!
+  goal = "wordlesolver";
+} else {
+  goal = "Lbadatcoding" 
+}
+//I expect you to find this, but if you don't I am gonna laugh my head off. Also credit to @enhancedrobot (me)
+
+function debounce(func, delay) {
+  let timer;
+  return function() {
+    clearTimeout(timer);
+    timer = setTimeout(func, delay);
+  }
+} //Copy paste from ChatGPT which probably took it off stack overflow because what else would it take it off of :l
+
+
+//Yeah I basically rewrote everything what do you plan to do about it
+const handleWordleScroll = debounce(() => {
+  wordleTextElements.forEach((element, index) => {
+    if (!element.classList.contains("greenrotate")) {
+
+    element.classList.remove("yellowrotate", "blackrotate");
+    
     const elementTop = element.getBoundingClientRect().top - buffer;
     const elementBottom = element.getBoundingClientRect().bottom + 40 + buffer;
     const isVisible = (elementTop >= 0) && (elementBottom <= window.innerHeight);
 
     if (isVisible) {
-      const rotationClass = rotationClasses[Math.floor(Math.random() * rotationClasses.length)];
-      element.classList.add(rotationClass);
-      shouldRemoveAnimation = false;
-    } else if (shouldRemoveAnimation) {
-      element.classList.remove(...rotationClasses);
+      if(Math.random() * 10 < 9) { //Chant it with me now... RNG! RNG! RNG! RNG!
+        randomIndex = Math.floor(Math.random() * 26);
+        randomLetter = String.fromCharCode(97+randomIndex);
+      } else {
+        randomLetter = goal[index]
+      }
+
+      if(randomLetter == goal[index]) {
+        const rotationClass = "greenrotate"
+        element.classList.add(rotationClass);
+
+        element.textContent = randomLetter;
+      } else {
+        if(goal.includes(randomLetter)) {
+          rotationClass = "yellowrotate"
+        } else {
+          rotationClass = "blackrotate"
+        }
+        element.classList.add(rotationClass);
+        shouldRemoveAnimation = false;
+        
+        element.textContent = randomLetter;
+      }
+    }
     }
   });
-});
+}, 100); // the 100 here is the delay in millis
+
+
+window.addEventListener("scroll", handleWordleScroll);
 
 const mainTitleElements = document.querySelectorAll(".main_title");
 
