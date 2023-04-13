@@ -138,6 +138,11 @@ body {
   animation-fill-mode: forwards;
 }
 
+.blackrotate {
+  animation-name: blackrotate;
+  animation-fill-mode: forwards;
+}
+
 .grouplearn_container {
   position: relative;
   animation-fill-mode: forwards;
@@ -251,3 +256,16 @@ body {
     transform: rotateX(360deg);
   }
 }
+
+@keyframes blackrotate {
+  0% {
+    background-color: black;
+    transform: rotateX(0deg);
+  }
+  100% {
+    color: white;
+    background-color: black;
+    transform: rotateX(360deg);
+  }
+}
+
