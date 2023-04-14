@@ -27,12 +27,7 @@ const wordleTextElements = document.querySelectorAll(".wordle_text");
 
 goal = "thisistest";
 
-if(Math.random() * 100 < 99) { //RNG!
-  goal = "wordlesolver";
-} else {
-  goal = "Lbadatcoding" 
-}
-//I expect you to find this, but if you don't I am gonna laugh my head off. Also credit to @enhancedrobot (me)
+goal = "wordlesolver";
 
 function debounce(func, delay) {
   let timer;
@@ -40,6 +35,7 @@ function debounce(func, delay) {
     clearTimeout(timer);
     timer = setTimeout(func, delay);
   }
+  
 } //Copy paste from ChatGPT which probably took it off stack overflow because what else would it take it off of :l
 
 
@@ -98,9 +94,6 @@ window.addEventListener('scroll', () => {
 });
 
 var ezsfinderContent1 = document.querySelector('.ezsfinder_content1');
-
-var text1 = `bruh\ns`
-var text2 = "bruh2"
 
 speed = 100;
 
